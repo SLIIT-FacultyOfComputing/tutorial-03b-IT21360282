@@ -14,15 +14,16 @@ You have to use the following commands in the <iomanip> header file
 
   ```c++
 #include <iostream>
+#include <iomanip>
 using namespace std;
 int main() {
    float marks[] = {78.4, 90.6, 45.9, 72.2, 54.4};
    char names[][20] = {"Ajith", "Wimal", "Kanthi", "Suranji", "Kushmitha"};
    cout << "No" << "Name" << "Marks" << endl;
    for (int r = 0; r < 5; r++) {
-       cout <<  r+1 
-            <<  names[r]
-            << marks[r] << endl;
+       cout <<  setw(5) << r+1 
+            << setw(15) << names[r]
+            << setw(10) << setiosflag (ios::fixed) <<setprecision(2)<<marks[r] << endl;
    }
 }
 ```
@@ -83,6 +84,9 @@ int main() {
 }
 
 // Implement the Volume() function here
+{
+  return height * width * length;
+}
 ```
  
 ## Exercise 3 – Functions with structures
@@ -113,7 +117,9 @@ int volume(int height, int width, int length);
 
 // 1. Define a structure called Box
 // have the integer data types Height, Width, Length
-
+struct box{
+int height, width, length;
+}
 // Do not change the main function
 int main() {
     // 2. Create a variable called box1 of the Box structure type
@@ -148,6 +154,7 @@ int main() {
 }
 
 // Implement the functions here
+
 ```
 
 ## Exercise 4 – Using Reference Type Parameters
